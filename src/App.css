@@ -1,0 +1,116 @@
+:root {
+    --primary: rgb(255, 51, 51);
+}
+
+*, ::before, ::after {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(46, 54, 63);
+}
+
+.App {
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.TodoList {
+    background-color: var(--primary);
+    width: 800px;
+}
+
+.TodoList-header {
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.TodoList-header {
+    padding: 25px;
+}
+
+.TodoList-header .TodoListInput {
+    margin-top: 15px;
+}
+
+.TodoListItem {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(240, 240, 240);
+    height: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.TodoListItem:nth-child(odd) {
+    background-color: rgb(225, 225, 225);
+}
+
+.TodoListItem-content {
+    flex-grow: 1;
+}
+
+.TodoListItem-check,
+.TodoListItem-remove {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+}
+
+.TodoListItem-check::before {
+    content: '';
+    font-weight: bold;
+}
+
+.TodoListItem-remove:hover {
+    color: white;
+    background-color: var(--primary);
+}
+
+.TodoListItem.checked {
+    background-color: slategray;
+    color: white;
+}
+
+.TodoListItem.checked > .TodoListItem-content {
+    text-decoration: line-through;
+}
+
+.TodoListItem.checked > .TodoListItem-check::before {
+    content: '✓';
+}
+
+.TodoListInput > input {
+    padding: 15px;
+    border: none;
+    flex-grow: 1;
+}
+
+.TodoListInput > input[type=button] {
+    flex-grow: 0;
+    width: 100px;
+    background-color: rgb(190, 190, 190);
+}
+
+.TodoListInput {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@media screen and (max-width: 800px) {
+    .App {
+        margin-top: 0;
+    }
+    .TodoList {
+        width: 100%;
+    }
+}
